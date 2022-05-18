@@ -1,3 +1,16 @@
 .App {
 
 }
+.list__link{
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.link{
+    color: lightblue;
+    text-decoration: none;
+}
+.link:hover{
+    color: darkblue;
+}
