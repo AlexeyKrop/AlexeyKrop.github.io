@@ -43,6 +43,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
       name={name}
       setNameCallback={setNameCallback}
       addUser={addUser}
+      users={users}
       error={error}
       totalUsers={totalUsers}
       onKeyPressHandler={onKeyPressHandler}
