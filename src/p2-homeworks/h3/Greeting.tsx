@@ -26,9 +26,9 @@ const Greeting: React.FC<GreetingPropsType> = (
       <Button name={'add'} callBack={addUser} />
       <span>{totalUsers}</span>
     </div>
-      <ul className="user__list">
+      <ul className={s.user__list}>
         {users.map(u => {
-          return <li key={u._id} className="user__item">{u.name}</li>
+          return <li key={u._id} className={s.user__item}>{u.name}</li>
         })}
       </ul>
     </>
