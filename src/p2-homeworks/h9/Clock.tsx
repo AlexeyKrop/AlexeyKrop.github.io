@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import s from './Clock.module.css'
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
 
 function Clock() {
@@ -30,26 +31,26 @@ function Clock() {
   const onMouseLeave = () => {
     setShow(false)
   }
-  const stringTime = zeroFormat(date.getHours()) + ':' +  zeroFormat(date.getMinutes()) + ':' + zeroFormat(date.getSeconds())// fix with date
+  const stringTime = zeroFormat(date.getHours()) + ':' + zeroFormat(date.getMinutes()) + ':' + zeroFormat(date.getSeconds())// fix with date
   const stringDate = zeroFormat(date.getDate()) + ':' + zeroFormat(date.getMonth()) + ':' + zeroFormat(date.getFullYear()) // fix with date
 
   return (
-    <div>
+    <div className={s.showDate}>
       {show && (
-        <div>
+        <div className={s.showStringDate}>
           {stringDate}
         </div>
       )}
-      <div
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
+      <div className={s.showStringTime}
+           onMouseEnter={onMouseEnter}
+           onMouseLeave={onMouseLeave}
       >
         {stringTime}
       </div>
 
-
-      <SuperButton onClick={start}>start</SuperButton>
-      <SuperButton onClick={stop}>stop</SuperButton>
+      <div className={s.btn__group}>
+        <SuperButton className={s.btn} onClick={start}>start</SuperButton>
+        <SuperButton className={s.btn} onClick={stop}>stop</SuperButton></div>
 
     </div>
   )
