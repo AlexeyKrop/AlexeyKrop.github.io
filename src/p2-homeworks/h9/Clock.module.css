@@ -32,6 +32,9 @@
 }
 .btn__group{
     width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .btn {
     text-decoration: none;
@@ -44,7 +47,6 @@
     z-index: 0;
     border-radius: 5px;
     box-sizing: border-box;
-    margin: 0 15px 15px 0;
     outline: none;
     cursor: pointer;
     user-select: none;
