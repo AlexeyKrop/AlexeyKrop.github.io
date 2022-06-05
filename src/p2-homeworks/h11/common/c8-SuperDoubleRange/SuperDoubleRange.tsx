@@ -49,7 +49,7 @@ const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = (
     });
   };
     if (range.current) {
-      range.current.style.left = `${6}%`;
+      range.current.style.left = `${10}%`;
       range.current.style.width = `${minVal * 1.4}px`;
     }
 
