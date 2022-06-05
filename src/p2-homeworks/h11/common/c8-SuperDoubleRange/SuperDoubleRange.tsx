@@ -48,7 +48,6 @@ const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = (
       }
     });
   };
-  const getPercent =(value: number) => Math.round(((value - minVal) / (maxVal - minVal)) * 100);
     if (range.current) {
       range.current.style.left = `${6}%`;
       range.current.style.width = `${minVal * 1.4}px`;
