@@ -19,6 +19,8 @@
 .slider__track {
     background-color: #ced4da;
     width: 100%;
+    top: -20px;
+    left: 10px;
     z-index: 1;
 }
 
@@ -43,7 +45,6 @@
 }
 
 
-
 .thumb {
     pointer-events: none;
     position: absolute;
@@ -59,6 +60,7 @@
 .thumb_right {
     z-index: 4;
 }
+
 /* For Chrome browsers */
 .thumb::-webkit-slider-thumb {
     background-color: #f1f5f7;
