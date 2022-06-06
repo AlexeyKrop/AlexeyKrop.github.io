@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {ChangeEvent, useEffect, useRef, useState} from 'react'
 import s from '../../HW11.module.css'
 import SuperRange from "../c7-SuperRange/SuperRange";
 
@@ -20,34 +20,18 @@ const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = (
   const [maxVal, setMaxVal] = useState<number>(100);
   const range = useRef<HTMLDivElement>(null);
 
-  const onChangeMinRange = (e: any) => {
+  const onChangeMinRange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = Math.min(Number(e.currentTarget.value), maxVal - 1)
     setMinVal(value)
     onChangeRange && onChangeRange([minVal, maxVal])
   }
 
-  const onChangeMaxRange = (e: any) => {
+  const onChangeMaxRange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = Math.max(Number(e.currentTarget.value), minVal + 1)
     setMaxVal(value)
     onChangeRange && onChangeRange([minVal, maxVal])
 
   }
-  const animate = ({ timing, draw, duration }: any) => {
-    let start = performance.now();
-    requestAnimationFrame(function animate(time) {
-      // timeFraction изменяется от 0 до 1
-      let timeFraction = (time - start) / duration;
-      if (timeFraction > 1) {
-        timeFraction = 1;
-      }
-      // вычисление текущего состояния анимации
-      let progress = timing(timeFraction);
-      draw(progress); // отрисовать её
-      if (timeFraction < 1) {
-        requestAnimationFrame(animate);
-      }
-    });
-  };
     if (range.current) {
       range.current.style.left = `${10}%`;
       range.current.style.width = `${minVal * 1.4}px`;
