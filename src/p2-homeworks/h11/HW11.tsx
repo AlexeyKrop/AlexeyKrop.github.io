@@ -8,9 +8,8 @@ function HW11() {
   const onChangeRange = (value: number) => {
     setValue1(value)
   }
-  const onChangeRangeDoubleRange = (arr: any) => {
+  const onChangeRangeDoubleRange = (arr: Array<number>) => {
     let [value1, value2] = arr
-    console.log(arr)
     setValue1(value1)
     setValue2(value2)
   }
