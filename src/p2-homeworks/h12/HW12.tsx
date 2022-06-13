@@ -8,23 +8,23 @@ import {AppStoreType} from "../h10/bll/store";
 const themes = ['dark', 'red', 'some'];
 
 function HW12() {
-    const theme = useSelector<AppStoreType, string>(state => state.theme.background)
+  const theme = useSelector<AppStoreType, string>(state => state.theme.background)
   const dispatch = useDispatch()
-    // useDispatch, onChangeCallback
+
   const onChangeCallback = (value: string) => {
-   dispatch(changeThemeC(value))
+    dispatch(changeThemeC(value))
   }
   console.log(s[theme + '-text'])
-    return (
-        <div className={s[theme]}>
-            <hr/>
-            <span className={s[theme + '-text']}>
+  return (
+    <div className={s[theme]}>
+      <hr/>
+      <span className={s[theme + '-text']}>
                 homeworks 12
             </span>
-            <SuperSelect options={themes} onChangeOption={onChangeCallback}/>
-            <hr/>
-        </div>
-    );
+      <SuperSelect options={themes} onChangeOption={onChangeCallback}/>
+      <hr/>
+    </div>
+  );
 }
 
 export default HW12;
