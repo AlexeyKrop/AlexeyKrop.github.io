@@ -14,7 +14,6 @@ function HW12() {
   const onChangeCallback = (value: string) => {
     dispatch(changeThemeC(value))
   }
-  console.log(s[theme + '-text'])
   return (
     <div className={s[theme]}>
       <hr/>
