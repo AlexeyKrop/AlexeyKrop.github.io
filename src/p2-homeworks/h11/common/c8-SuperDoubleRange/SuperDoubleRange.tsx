@@ -21,19 +21,19 @@ const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = (
   const range = useRef<HTMLDivElement>(null);
 
   const onChangeMinRange = (e: ChangeEvent<HTMLInputElement>) => {
-    const value = Math.min(Number(e.currentTarget.value), maxVal - 1)
+    const value = Math.min(Number(e.currentTarget.value), maxVal - 15)
     setMinVal(value)
     onChangeRange && onChangeRange([minVal, maxVal])
   }
 
   const onChangeMaxRange = (e: ChangeEvent<HTMLInputElement>) => {
-    const value = Math.max(Number(e.currentTarget.value), minVal + 1)
+    const value = Math.max(Number(e.currentTarget.value), minVal + 15)
     setMaxVal(value)
     onChangeRange && onChangeRange([minVal, maxVal])
 
   }
     if (range.current) {
-      range.current.style.left = `${10}%`;
+      range.current.style.left = `${1}%`;
       range.current.style.width = `${minVal * 1.4}px`;
     }
 
@@ -49,40 +49,11 @@ const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = (
         <div className={s.slider}>
           <div className={s.slider__track}/>
           <div ref={range} className={s.slider__range}/>
-          <div className={s.slider__left_value}>{minVal}</div>
-          <div className={s.slider__right_value}>{maxVal}</div>
+          {/*<div className={s.slider__left_value}>{minVal}</div>*/}
+          {/*<div className={s.slider__right_value}>{maxVal}</div>*/}
         </div>
 
-      {/*<div className="container">*/}
-      {/*  <input*/}
-      {/*    type="range"*/}
-      {/*    min={min}*/}
-      {/*    max={max}*/}
-      {/*    value={minVal}*/}
-      {/*    onChange={(event) => {*/}
-      {/*      const value = Math.min(Number(event.target.value), maxVal - 1);*/}
-      {/*      setMinVal(value);*/}
-      {/*    }}*/}
-      {/*    className={`${s.thumb} ${s.thumb_left}`}*/}
-      {/*  />*/}
-      {/*  <input*/}
-      {/*    type="range"*/}
-      {/*    min={min}*/}
-      {/*    max={max}*/}
-      {/*    value={maxVal}*/}
-      {/*    onChange={(event) => {*/}
-      {/*      const value = Math.max(Number(event.target.value), minVal + 1);*/}
-      {/*      setMaxVal(value);*/}
-      {/*    }}*/}
-      {/*    className={`${s.thumb} ${s.thumb_right}`}*/}
-      {/*  />*/}
-      {/*  <div className={s.slider}>*/}
-      {/*    <div className={s.slider__track}/>*/}
-      {/*    <div className={s.slider__range}/>*/}
-      {/*    <div className={s.slider__left_value}>{minVal}</div>*/}
-      {/*    <div className={s.slider__right_value}>{maxVal}</div>*/}
-      {/*  </div>*/}
-      {/*</div>*/}
+
     </>
   )
 }
