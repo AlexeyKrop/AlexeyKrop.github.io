@@ -4,6 +4,8 @@ import axios from "axios";
 const Request = () => {
   const [value, setValue] = useState<boolean>(false)
   const [response, setResponse] = useState<string>('')
+  const [error, setError] = useState<string>('')
+  console.log(error)
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.currentTarget.checked)
   }
@@ -11,8 +13,7 @@ const Request = () => {
     axios.post(`https://neko-cafe-back.herokuapp.com/auth/test`, {success: value})
       .then(res => setResponse(res.data.errorText))
       .catch (error =>  {
-      console.log({...error});
-      console.log(error.response ? error.response.data.errorText : error.message);
+         return error.response ? setError(error.response.data.errorText) : error.message
        })
   }
   return (
@@ -20,6 +21,7 @@ const Request = () => {
       <button onClick={onClickRequestHandler}>Кнопка</button>
       <input onChange={onChangeHandler} type="checkbox" className="type"/>
       <p>{response}</p>
+      <p>{error}</p>
     </div>
   );
 };
