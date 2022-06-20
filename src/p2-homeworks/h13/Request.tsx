@@ -5,15 +5,18 @@ const Request = () => {
   const [value, setValue] = useState<boolean>(false)
   const [response, setResponse] = useState<string>('')
   const [error, setError] = useState<string>('')
-  console.log(error)
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.currentTarget.checked)
   }
   const onClickRequestHandler = () => {
     axios.post(`https://neko-cafe-back.herokuapp.com/auth/test`, {success: value})
-      .then(res => setResponse(res.data.errorText))
+      .then(res => {
+        setError('')
+        return setResponse(res.data.errorText)
+      })
       .catch (error =>  {
-         return error.response ? setError(error.response.data.errorText) : error.message
+        setResponse('')
+         return error.response ? setError(error.response.data.errorText)  : error.message
        })
   }
   return (
