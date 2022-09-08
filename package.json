@@ -24,7 +24,7 @@
     "uuid": "^8.3.2",
     "web-vitals": "^2.1.0"
   },
-  "homepage": "https://alexeykrop.github.io",
+  "homepage": "https://alexeykrop.github.io/homework",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
